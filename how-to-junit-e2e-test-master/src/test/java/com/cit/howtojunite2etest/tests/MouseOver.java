@@ -21,10 +21,14 @@ public class MouseOver {
     public void validarMouseOver () {
 
         /* implementar e teste automatizado para a validação abaixo */
+
         this.navegador.get("https://automacaocombatista.herokuapp.com/iteracoes/mousehover");
-        this.navegador.findElement(By.xpath(""));
-        String result = this.navegador.findElement(By.xpath("/html/body/div[2]/div[2]/div[3]/div[2]/div/div[3]/p")).getText();
+
+        this.navegador.findElement(By.className("card-content")).getRect();
+        String result = this.navegador.findElement(By.className("fa fa-times right")).getText();
         Assert.assertEquals("Você usou o mouse hover!", result);
+
+        this.after();
     }
 
     @After

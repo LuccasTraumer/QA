@@ -32,6 +32,8 @@ public class MudancaFoco {
 
         String result = this.navegador.findElement(By.id("result")).getText();
         Assert.assertEquals("Você clicou no alerta com sucesso!!", result);
+
+        this.after();
     }
 
     /* url da página de teste: https://automacaocombatista.herokuapp.com/mudancadefoco/alert */
@@ -47,6 +49,8 @@ public class MudancaFoco {
 
         String result = this.navegador.findElement(By.id("result")).getText();
         Assert.assertEquals("Você clicou: Ok", result);
+
+        this.after();
     }
 
     /* url da página de teste: https://automacaocombatista.herokuapp.com/mudancadefoco/alert */
@@ -64,6 +68,8 @@ public class MudancaFoco {
 
         String result = this.navegador.findElement(By.id("result")).getText();
         Assert.assertEquals("Você digitou: NEXT GEN", result);
+
+        this.after();
     }
 
     /* url da página de teste: https://automacaocombatista.herokuapp.com/mudancadefoco/janela */
@@ -80,6 +86,8 @@ public class MudancaFoco {
 
         String result = this.navegador.findElement(By.className("tamanhodiv2")).getText();
         Assert.assertEquals("Você Abriu uma nova janela!!", result);
+
+        this.after();
     }
 
     /* url da página de teste: https://automacaocombatista.herokuapp.com/mudancadefoco/modal */
@@ -89,13 +97,13 @@ public class MudancaFoco {
         /* implementar e teste automatizado para a validação abaixo */
         this.navegador.get("https://automacaocombatista.herokuapp.com/mudancadefoco/modal");
 
-        this.navegador.findElement(By.xpath("/html/body/div[2]/div[2]/div[3]/div/a")).click();
-
+        //this.navegador.findElement(By.xpath("/html/body/div[2]/div[2]/div[3]/div/a")).click();
+        this.navegador.findElement(By.className("modal-trigger")).click();
         String result = this.navegador.findElement(By.xpath("/html/body/div[2]/div[2]/div[3]/div/div[1]/div[1]/h4")).getText();
 
         Assert.assertEquals("Modal Teste",result);
 
-
+        this.after();
     }
 
     @After
